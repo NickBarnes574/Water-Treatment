@@ -30,11 +30,12 @@ set(LIB_NETWORKING  Networking)
 set(LIB_THREADING   Threading)
 
 # Define executable name
-set(EXECUTABLE_DOWNSTREAM  downstream)
-set(EXECUTABLE_PRETREATMENT  pretreatment)
-set(EXECUTABLE_RESIDENTIAL residential)
-set(EXECUTABLE_STORMDRAIN  stormdrain)
-set(EXECUTABLE_TREATMENT  treatment)
+set(EXECUTABLE_ADMIN          admin)
+set(EXECUTABLE_DOWNSTREAM     downstream)
+set(EXECUTABLE_PRETREATMENT   pretreatment)
+set(EXECUTABLE_RESIDENTIAL    residential)
+set(EXECUTABLE_STORMDRAIN     stormdrain)
+set(EXECUTABLE_TREATMENT      treatment)
 
 # Options for enabling various build tools/features
 option(COMPILE_EXECUTABLE "Compile the executable"            ON)
@@ -50,6 +51,7 @@ include(cmake/output-directories.cmake)
 include(cmake/project-structure.cmake)
 include(cmake/build-options.cmake)
 
+configure_admin_executable()
 configure_downstream_executable()
 configure_pretreatment_executable()
 configure_residential_executable()

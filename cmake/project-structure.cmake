@@ -2,6 +2,14 @@ include_directories("${CMAKE_BINARY_DIR}/cmake/config")
 add_subdirectory(cmake/config)
 add_subdirectory(libs)
 
+function(configure_admin_executable)
+  if(COMPILE_EXECUTABLE)
+    add_subdirectory(apps/admin)
+    install(TARGETS ${EXECUTABLE_ADMIN}
+            DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
+  endif()
+endfunction()
+
 function(configure_downstream_executable)
   if(COMPILE_EXECUTABLE)
     add_subdirectory(apps/downstream)
