@@ -1,4 +1,4 @@
-set(EXE_SOURCES "src/main.c" "option_handler.c")
+set(EXE_SOURCES "src/main.c" "src/option_handler.c")
 set(EXE_INCLUDES "include/option_handler.h")
 
 add_executable(${EXECUTABLE_ADMIN} ${EXE_SOURCES} ${EXE_INCLUDES})

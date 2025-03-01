@@ -43,12 +43,13 @@ int main(int argc, char ** argv)
         goto END;
     }
 
-    config.backlog_size   = BACKLOG_SIZE;
-    config.client_request = NULL; // TODO: Build out client request function
-    config.max_clients    = MAX_CLIENTS;
-    config.num_threads    = options.n_value;
-    config.port           = options.p_value;
-    config.timeout        = POLL_TIMEOUT;
+    config.backlog_size = BACKLOG_SIZE;
+    config.client_request =
+        NULL; // TODO(nick): Build out client request function
+    config.max_clients = MAX_CLIENTS;
+    config.num_threads = options.n_value;
+    config.port        = options.p_value;
+    config.timeout     = POLL_TIMEOUT;
 
     exit_code = start_tcp_server(&config);
     if (E_SUCCESS != exit_code)

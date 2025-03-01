@@ -6,7 +6,8 @@
  * the help menu. It is responsible for setting up initial configurations based
  * on the options passed to the application.
  */
-#define _GNU_SOURCE // for strnlen()
+// NOLINTNEXTLINE
+#define _GNU_SOURCE // for strnlen() //
 
 #include <getopt.h> // getopt()
 #include <stdio.h>
@@ -151,6 +152,7 @@ int process_options(int argc, char ** argv, options_t * options_p)
                 break;
 
             default:
+                // NOLINTNEXTLINE
                 fprintf(stderr, "Unknown option encountered.\n");
                 exit_code = E_FAILURE;
                 goto END;
@@ -273,10 +275,12 @@ static void report_invalid_options()
 {
     if (('n' == optopt) || ('p' == optopt))
     {
+        // NOLINTNEXTLINE
         fprintf(stderr, "Option '-%c' requires an argument.\n", optopt);
     }
     else
     {
+        // NOLINTNEXTLINE
         fprintf(stderr, "Unknown option '-%c'.\n", optopt);
     }
 }
@@ -293,11 +297,14 @@ static int report_extra_arguments(int optind, int argc, char ** argv)
 
     if (optind < argc)
     {
+        // NOLINTNEXTLINE
         fprintf(stderr, "Invalid arguments encountered: ");
         while (optind < argc)
         {
+            // NOLINTNEXTLINE
             fprintf(stderr, "%s ", argv[optind++]);
         }
+        // NOLINTNEXTLINE
         fprintf(stderr, "\n");
         goto END;
     }

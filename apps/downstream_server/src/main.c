@@ -1,4 +1,3 @@
-#include <SDL2/SDL.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -9,6 +8,8 @@ int main()
     int exit_code = E_FAILURE;
 
     exit_code = E_SUCCESS;
+
+    goto END;
 END:
     return exit_code;
 }

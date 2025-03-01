@@ -3,6 +3,7 @@
 
 #define _XOPEN_SOURCE 700 // prevent incomplete class type "struct sigaction"
 
+#include <pthread.h>
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
